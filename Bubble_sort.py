@@ -63,9 +63,9 @@ def compare_algorithms():
     y_cs = []
     for i in range(200):
         length = i*10 + 10
-        list_to_sort = [r.randint(-100, 100) for _ in range(length)]
-        duration_bs = bubble_sort(list_to_sort)
-        duration_cs = coctail_sort(list_to_sort)
+        list_to_sort = tuple([r.randint(-100, 100) for _ in range(length)])
+        duration_bs = bubble_sort(list(list_to_sort))
+        duration_cs = coctail_sort(list(list_to_sort))
         x.append(length)
         y_bs.append(duration_bs)
         y_cs.append(duration_cs)
